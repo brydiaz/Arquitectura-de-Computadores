@@ -247,24 +247,8 @@ section .data
 %endmacro
 
 ;Si está dentro deja un 2 rax y en rcx, la posicion donde esta
-%macro strIn 2:
-  mov rcx,0
 
-  %%process:
-      cmp byte[%1+rcx], 0
-      jz %%endProcess
 
-      cmp byte[%1+rcx], %2
-      jz %%isIn
-
-      inc rcx
-      mov rax, 2
-      jmp %%process
-  %%isIn:
-      mov rax, 3
-  %%endProcess:
-
-%endmacro
 
 
 %macro cleanEtiquete 2:
